@@ -20,6 +20,9 @@ Things to install:
 - Chrome
 - \[Firefox\]
 - \[oh-my-posh\]
+- Database viewers
+  - MongoDB Compass?
+  - JetBrains DataGrip is great✨, but no license 🙁
 
 Things to init:
 - ssh keys
