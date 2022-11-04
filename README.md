@@ -20,9 +20,29 @@ Things to install:
 - Chrome
 - \[Firefox\]
 - \[oh-my-posh\]
+  - Fonts
 - Database viewers
-  - MongoDB Compass?
-  - JetBrains DataGrip is great✨, but no license 🙁
+  - MongoDB Compass? (if using MongoDB)
+  - DataGrip is great✨, but no license 🙁
+<!--  -->
+- [] (if using Java)
+  - IntelliJ
+  - Java SDKs?
+- [] (if using a lot of Python)
+  - PyCharm
+  - better package manager?
+<!--  -->
+- [] (game dev)
+  - Unity? Unreal? Visual Studio workloads
+  - Blender / [Maya, Mudbox/ZBrush]
+<!--  -->
+- [] (personal)
+  - Adobe Ps, Ai, Lr, Ae, Pr, DC
+  - Revit, Lumion, 3dsMax, Maya
+  - Blender
+  - qBitTorrent
+  - Tor?
+  - TODO: some VPN?
 
 Things to init:
 - ssh keys
