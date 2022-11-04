@@ -1,0 +1,11 @@
+# TODO: Make script to gen this?
+[core]
+	editor = \"C:\\Users\\Mai(Mai)Norapong\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[user]
+	name = Mai Norapong
+	email = mai.norapong@7peakssoftware.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
