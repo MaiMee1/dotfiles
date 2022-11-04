@@ -1,5 +1,9 @@
 # dotfiles
 
+Config
+- .editorconfig
+- visual studio code user settings
+- git settings (branch, features, crlf)
 
 ### Windows
 
@@ -10,7 +14,7 @@ Things to install:
 - docker (docker desktop)
   - WSL
 - node
-  - python
+  - python3
   - visual studio (C++ workload)
 - github desktop?
 - Chrome
@@ -20,12 +24,16 @@ Things to install:
 Things to init:
 - ssh keys
 - ~~gpg key~~
-- visual studio code user settings
-- git settings? (branch, features, crlf)
 <!--  -->
 - path limit
 - ExecutionPolicy
+- User Account Control settings
 <!--  -->
 - Maybe remove bloatware?
 - Startup Services
-- Windows Terminal as default
+  - Remove docker desktop
+  - Remove bloatware
+- Windows Terminal
+  - Set as default
+- Explorer
+  - Show file extensions, hidden files, and checkboxes
