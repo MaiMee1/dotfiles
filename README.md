@@ -9,52 +9,84 @@ Config
   - `.zprofile` for zsh
   - `.bashrc` for linux
 
-### Windows
+### \*
 
-Things to install:
-- visual studio code
-  - "Open with Code" context menu
-- `git`
-  - pre: visual studio code
-    - `git config --global core.editor "code --wait"`
-- `docker` (docker desktop)
-  - pre: WSL
-- `node`
-  - pre: python3
-  - pre: visual studio (C++ workload)
-- GitHub Desktop
-- Web Browsers
-  - Chrome
-  - \[Firefox\]
+**Install**
+- [ ] Git
+- [ ] Visual Studio Code
+  - [ ] "Open with Code" context menu
+  - [ ] Add "code" to PATH
+- [ ] JetBrains Toolbox
+- [ ] GitHub Desktop
+- Browsers
+  - [ ] Google Chrome
+    -  [ ] Google Password Manager / 1Password
+- Package Managers
+- Languages
+  - [ ] Python 3
+  - [ ] Node
+    - [ ] corepack enable pnpm
+  - [ ] Go
+  - [ ] gcc?
+
+**Set Up**
+- [ ] SSH keys
+- [ ] (optional) GPG key
+- [ ] git config --global user.name
+- [ ] git config --global user.email
+- [ ] `src` folder
+
+### Work
+
+**Install**
+- [ ] Zoom Workplace
+- [ ] Microsoft Teams
+- [ ] Google Chat
+- [ ] Colima (docker)
+
+### Personal
+
+**Install**
+- [ ] Docker Desktop
+- [ ] qBitTorrent
+- [ ] Blender
+- [ ] Discord
+- [ ] Burp Suite
+
+#### Windows
+
+**Install**
+- [ ] Adobe Ps, Ai, Lr, Ae, Pr, DC
+- [ ] Revit, 3D Civil, Lumion
+- [ ] 3dsMax, Maya
+- [ ] Tor?
+- **TODO:** some VPN?
+- [ ] CPU-Z, HWMonitor
+- [ ] WinDirStat
+- [ ] WinRAR
+
+**Set Up**
+- [ ] WSL
+- [ ] Terminal (if old Windows)
+
+### MacOS
+
+- Git
+  - type 'git' in Terminal, install dev tools
+- Visual Studio Code
+  - Install for all users
+  - Open Command Pallete (Command + Shift + P) -> Install "code" command in PATH
+  - `git config --global core.editor "code --wait"`
+
+### TO BE UPDATED
+
 - [\[oh-my-posh\]](https://ohmyposh.dev/docs)
   - Fonts
   - `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/robbyrussel.omp.json" | Invoke-Expression`
-- Database viewers
-  - MongoDB Compass? (if using MongoDB)
-  - DataGrip is great✨, ~~but no license 🙁~~, yes license.
-<!--  -->
-- [] (if using Java)
-  - IntelliJ
-  - Java SDKs?
-- [] (if using a lot of Python)
-  - PyCharm
-  - better package manager?
 <!--  -->
 - [] (game dev)
   - Unity? Unreal? Visual Studio workloads
   - Blender / [Maya, Mudbox/ZBrush]
-<!--  -->
-- [] (personal)
-  - Adobe Ps, Ai, Lr, Ae, Pr, DC
-  - Revit, Lumion, 3dsMax, Maya
-  - Blender
-  - qBitTorrent
-  - Tor?
-  - **TODO:** some VPN?
-  - Discord
-  - CPU-Z, HWMonitor
-  - WinDirStat
-  - WinRAR, UltraISO
 
 Do:
 - ✅ Use [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/) instead of individual installers
@@ -63,8 +95,6 @@ Do:
 - ✅ Use Chrome profiles for logged in accounts
 
 Things to init:
-- ssh keys
-- \[gpg key]
 <!--  -->
 - path limit
 - [ExecutionPolicy](scripts/executionPolicy.ps1)
