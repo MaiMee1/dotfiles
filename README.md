@@ -1,112 +1,62 @@
 # dotfiles
 
-Config
-- `.editorconfig`?
-- visual studio code user settings
-- git settings (branch, features, crlf)
-- terminal startup profiles
-  - `$PROFILE` on Windows
-  - `.zprofile` for zsh
-  - `.bashrc` for linux
+Machine setup for Windows (main), macOS and Linux. Apps come from [winget](https://learn.microsoft.com/windows/package-manager/) configuration files; dotfiles are managed by [chezmoi](https://www.chezmoi.io/) from [`home/`](home).
 
-### \*
+## Windows bootstrap
 
-**Install**
-- [ ] Git
-- [ ] Visual Studio Code
-  - [ ] "Open with Code" context menu
-  - [ ] Add "code" to PATH
-- [ ] JetBrains Toolbox
-- [ ] GitHub Desktop
-- Browsers
-  - [ ] Google Chrome
-    -  [ ] Google Password Manager / 1Password
-- Package Managers
-- Languages
-  - [ ] Python 3
-  - [ ] Node
-    - [ ] corepack enable pnpm
-  - [ ] Go
-  - [ ] gcc?
+1. Allow local scripts for your user: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` (see [scripts/executionPolicy.ps1](scripts/executionPolicy.ps1)).
+2. Install apps:
+   ```powershell
+   winget configure -f windows\winget\configuration.dsc.yaml
+   winget configure -f windows\winget\personal.dsc.yaml   # optional; trim first
+   ```
+3. Apply dotfiles. This asks for git name/email and a personal/work profile once:
+   ```powershell
+   chezmoi init --apply MaiMee1
+   ```
+4. Node via fnm: `fnm install --lts`, then `corepack enable pnpm`.
+5. Optional Defender exclusions and a real-time toggle: see [windows/defender](windows/defender).
 
-**Set Up**
-- [ ] SSH keys
+## What chezmoi manages
+
+| Source | Target |
+| --- | --- |
+| `home/dot_gitconfig.tmpl` | `~/.gitconfig` (identity from chezmoi data) |
+| `home/Documents/*/Microsoft.PowerShell_profile.ps1.tmpl` | PowerShell 7 and Windows PowerShell profiles (fnm, oh-my-posh). Windows only. |
+| `home/private_dot_ssh/config` | `~/.ssh/config`. Keys are not tracked; see [docs/ssh-keygen.md](docs/ssh-keygen.md). |
+
+Edit with `chezmoi edit <file>` or in this repo, then `chezmoi apply`. Pull updates with `chezmoi update`.
+
+## Manual steps
+
+**Every machine**
+- [ ] SSH key ([docs/ssh-keygen.md](docs/ssh-keygen.md))
 - [ ] (optional) GPG key
-- [ ] git config --global user.name
-- [ ] git config --global user.email
-- [ ] `src` folder
+- [ ] `src` folder: `<drive>\src\github.com\<owner>\<repo>`
+- [ ] Chrome profiles per logged-in account; password manager
 
-### Work
+**Windows**
+- [ ] Visual Studio workloads in the VS Installer (pin the Installer, not VS itself)
+- [ ] Windows Terminal: set as default terminal, PowerShell 7 as default profile, a Nerd Font
+- [ ] Explorer: show file extensions, hidden files and item checkboxes
+- [ ] Enable long paths (`HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled = 1`)
+- [ ] User Account Control level
+- [ ] Startup apps: remove Docker Desktop and bloatware
+- [ ] WSL distro: `wsl --install -d Ubuntu`
+- [ ] Not on winget / licensed: Adobe (Ps, Ai, Lr, Ae, Pr, DC), Revit, Civil 3D, Lumion, 3ds Max, Maya
 
-**Install**
-- [ ] Zoom Workplace
-- [ ] Microsoft Teams
-- [ ] Google Chat
-- [ ] Colima (docker)
+**Work machines**
+- [ ] Zoom, Microsoft Teams, Google Chat
+- [ ] Colima instead of Docker Desktop (macOS)
 
-### Personal
+## macOS
 
-**Install**
-- [ ] Docker Desktop
-- [ ] qBitTorrent
-- [ ] Blender
-- [ ] Discord
-- [ ] Burp Suite
+- Git: run `git` in Terminal to install the developer tools.
+- VS Code: Command Palette > "Shell Command: Install 'code' command in PATH".
+- chezmoi: `brew install chezmoi && chezmoi init --apply MaiMee1`
+- TODO: Brewfile for apps (`brew bundle`).
 
-#### Windows
+## Ideas
 
-**Install**
-- [ ] Adobe Ps, Ai, Lr, Ae, Pr, DC
-- [ ] Revit, 3D Civil, Lumion
-- [ ] 3dsMax, Maya
-- [ ] Tor?
-- **TODO:** some VPN?
-- [ ] CPU-Z, HWMonitor
-- [ ] WinDirStat
-- [ ] WinRAR
-
-**Set Up**
-- [ ] WSL
-- [ ] Terminal (if old Windows)
-
-### MacOS
-
-- Git
-  - type 'git' in Terminal, install dev tools
-- Visual Studio Code
-  - Install for all users
-  - Open Command Pallete (Command + Shift + P) -> Install "code" command in PATH
-  - `git config --global core.editor "code --wait"`
-
-### TO BE UPDATED
-
-- [\[oh-my-posh\]](https://ohmyposh.dev/docs)
-  - Fonts
-  - `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/robbyrussel.omp.json" | Invoke-Expression`
-<!--  -->
-- [] (game dev)
-  - Unity? Unreal? Visual Studio workloads
-  - Blender / [Maya, Mudbox/ZBrush]
-
-Do:
-- ✅ Use [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/) instead of individual installers
-- ✅ Use one version of Visual Studio: Community Edition
-- ✅ Create shortcut for Visual Studio installer instead of Visual Studio directly
-- ✅ Use Chrome profiles for logged in accounts
-
-Things to init:
-<!--  -->
-- path limit
-- [ExecutionPolicy](scripts/executionPolicy.ps1)
-- User Account Control settings
-<!--  -->
-- Maybe remove bloatware?
-- Startup Services
-  - Remove docker desktop
-  - Remove bloatware
-- Windows Terminal
-  - Set as default
-- Explorer
-  - Show file extensions, hidden files, and checkboxes
-- Disable Windows Defender
-- Disable AI
+- Track `~/.claude` (settings, CLAUDE.md, skills) with chezmoi.
+- Game dev: Unity/Unreal, VS game workloads, ZBrush/Mudbox.
