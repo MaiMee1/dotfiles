@@ -1,0 +1,111 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# Optional personal apps. Apply with: winget configure -f windows\winget\personal.dsc.yaml
+# Delete entries you don't want on a given machine before applying.
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Obsidian.Obsidian
+      directives:
+        description: Obsidian
+      settings:
+        id: Obsidian.Obsidian
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Discord.Discord
+      directives:
+        description: Discord
+      settings:
+        id: Discord.Discord
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Valve.Steam
+      directives:
+        description: Steam
+      settings:
+        id: Valve.Steam
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: VideoLAN.VLC
+      directives:
+        description: VLC
+      settings:
+        id: VideoLAN.VLC
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: qBittorrent.qBittorrent
+      directives:
+        description: qBittorrent
+      settings:
+        id: qBittorrent.qBittorrent
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: BlenderFoundation.Blender
+      directives:
+        description: Blender
+      settings:
+        id: BlenderFoundation.Blender
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Musescore.Musescore
+      directives:
+        description: MuseScore
+      settings:
+        id: Musescore.Musescore
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Proton.ProtonVPN
+      directives:
+        description: Proton VPN
+      settings:
+        id: Proton.ProtonVPN
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Netbird.Netbird
+      directives:
+        description: NetBird
+      settings:
+        id: Netbird.Netbird
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Malwarebytes.Malwarebytes
+      directives:
+        description: Malwarebytes
+      settings:
+        id: Malwarebytes.Malwarebytes
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: CPUID.CPU-Z
+      directives:
+        description: CPU-Z
+      settings:
+        id: CPUID.CPU-Z
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: CPUID.HWMonitor
+      directives:
+        description: HWMonitor
+      settings:
+        id: CPUID.HWMonitor
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: WinDirStat.WinDirStat
+      directives:
+        description: WinDirStat
+      settings:
+        id: WinDirStat.WinDirStat
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: RARLab.WinRAR
+      directives:
+        description: WinRAR
+      settings:
+        id: RARLab.WinRAR
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Zoom.Zoom.EXE
+      directives:
+        description: Zoom Workplace
+      settings:
+        id: Zoom.Zoom.EXE
+        source: winget
