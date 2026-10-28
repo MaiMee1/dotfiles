@@ -1,0 +1,16 @@
+# Managed by chezmoi. Keys are not tracked - see docs/ssh-keygen.md.
+# https://man.openbsd.org/ssh_config.5
+
+Host github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+
+# A second GitHub account gets its own key and host alias; clone with
+# git@github.com-<alias>:owner/repo.git
+#
+# Host github.com-<alias>
+#   Hostname github.com
+#   User git
+#   IdentityFile ~/.ssh/id_ed25519_<alias>
+#   IdentitiesOnly yes
